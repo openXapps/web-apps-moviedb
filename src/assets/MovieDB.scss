@@ -1,0 +1,109 @@
+/**
+ * SCSS imports
+ */
+@import 'media-queries';
+
+/**
+ * Bootstrap overwrite
+ */
+// input:hover,
+.form-control {
+  background-color: rgb(114, 71, 31) !important;
+  color: orange !important;
+  border: 1px solid orange !important;
+}
+
+/**
+ * Custom CSS
+ */
+ .gd-mdb-card-header {
+  font-size: 1.2em;
+}
+
+.gd-mdb-footer {
+    opacity: 0.9;
+}
+
+.gd-mdb-ico-sm {
+  font-size: 16px;
+  margin: 5px;
+}
+
+.gd-mdb-ico-md {
+  font-size: 24px;
+  margin: 5px;
+}
+
+.gd-mdb-ico-lg {
+  font-size: 30px;
+  margin: 5px;
+}
+
+.gd-mdb-ico-sm:hover,
+.gd-mdb-ico-md:hover,
+.gd-mdb-ico-lg:hover {
+  cursor: pointer;
+}
+
+.gd-mdb-img-tmdb-logo {
+  width: 120px;
+}
+
+.gd-mdb-img-thumbnail {
+  // height: 281px;
+  // max-width: 204px;
+  height: auto;
+  max-width: 100%;
+  cursor: help;
+}
+
+.gd-mdb-spinner {
+  width: 6em;
+  height: 6em;
+}
+
+.gd-mdb-modal-animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+ 
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+ 
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+ 
+.gd-mdb-modal-fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.gd-mdb-hidden {
+  color: #222;
+  background-color: #222;
+  cursor: default;
+}
+
+/**
+ * Media queries
+ */
+@include mobile {
+  .gd-mdb-card-header {
+    font-size: 1.5em;
+  }
+
+  // .gd-mdb-img-thumbnail {
+  //     height: 450px;
+  //     max-width: 300px;
+  // }
+}
+
+@include tablet {
+
+}
