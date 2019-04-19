@@ -118,14 +118,14 @@ class MovieDB extends Component {
         fromSeconds = (new Date().getTime() / 1000) - (60 * 60 * 24 * 90);
         toSeconds = (60 * 60 * 24 * 50);
         url += '/discover/movie';
-        url += '?include_adult=false&language=en-US&region=US&vote_count.gte=10&sort_by=popularity.desc';
+        url += '?include_adult=false&language=en-US&region=US&vote_count.gte=5&sort_by=popularity.desc';
         url += `&primary_release_date.gte=${moment.unix(fromSeconds - toSeconds).format('YYYY-MM-DD')}`;
         url += `&primary_release_date.lte=${moment.unix(fromSeconds).format('YYYY-MM-DD')}`;
         trigger = true;
         break;
       case 3: // By year
         url += '/discover/movie';
-        url += '?include_adult=false&language=en-US&region=US&vote_count.gte=10&sort_by=popularity.desc';
+        url += '?include_adult=false&language=en-US&region=US&vote_count.gte=5&sort_by=popularity.desc';
         url += `&primary_release_year=${value.toString()}`;
         currentFilter = `${currentFilter}${value.toString()}`;
         trigger = true;
@@ -133,7 +133,7 @@ class MovieDB extends Component {
       case 4: // By keyword
         if (lastKeyword.indexOf(value) === -1) {
           url += '/search/movie';
-          url += '?include_adult=false&language=en-US&region=US&vote_count.gte=10';
+          url += '?include_adult=false';
           url += `&query=${value}`;
           currentFilter = `${MovieDBSearchIDs[4]} [${value}]`;
           sort = { key: 'release_date', direction: 'desc' };
@@ -144,7 +144,7 @@ class MovieDB extends Component {
       case 5: // By cast
         // value passed should be { id: cast_id, name: cast_name }
         url += '/discover/movie';
-        url += '?include_adult=false&language=en-US&vote_count.gte=10';
+        url += '?include_adult=false&language=en-US&vote_count.gte=5';
         url += `&with_cast=${value.id}`;
         currentFilter = `${MovieDBSearchIDs[5]} [${value.name}]`;
         sort = { key: 'release_date', direction: 'desc' };
