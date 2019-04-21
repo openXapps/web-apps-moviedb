@@ -12,6 +12,10 @@
 # production
 /build
 
+# privacy
+src/assets/TMDbKey.js
+public/index.html
+
 # misc
 .DS_Store
 .env.local

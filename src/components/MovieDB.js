@@ -106,11 +106,8 @@ class MovieDB extends Component {
 
     switch (moviesSearchId) {
       case 0: // Latest
-        fromSeconds = (new Date().getTime() / 1000) - (60 * 60 * 24 * 50)
-        url += '/discover/movie';
-        url += '?include_adult=false&language=en-US&region=US&vote_count.gte=100';
-        url += `&release_date.gte=${moment.unix(fromSeconds).format('YYYY-MM-DD')}`;
-        sort = { key: 'release_date', direction: 'desc' };
+        url += '/movie/now_playing';
+        url += '?language=en-US&region=US';
         trigger = true;
         break;
       case 1: // On media

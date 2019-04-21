@@ -3,9 +3,9 @@
  */
 const MovieDBSearchIDs = [
     // 0
-    'Latest and popular movies',
+    'Now playing in theaters',
     // 1
-    'Latest movies possibly on Blu-ray',
+    'New movies possibly on Blu-ray',
     // 2
     'My favorites',
     // 3

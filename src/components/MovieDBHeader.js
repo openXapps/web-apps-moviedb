@@ -11,7 +11,7 @@ const genYears = () => {
   const today = new Date();
   const year = today.getFullYear() - 1;
   const yearList = [];
-  for (let n = 0; n < 20; n++) {
+  for (let n = 0; n < 110; n++) {
     yearList.push(year - n);
   }
   return yearList;
@@ -116,7 +116,12 @@ class MovieDBHeader extends Component {
                 className="btn btn-outline-warning mr-lg-2 mr-0 mt-2 mt-lg-0"
                 type="button"
                 onClick={this.handleLatest}
-              >Latest</button>
+                data-toggle="tooltip"
+                data-placement="bottom"
+                title="Now playing in theaters"
+              ><span
+                className="mr-2 d-lg-none d-xl-inline-block"
+              >Now Playing</span><i className="fa fa-video"></i></button>
               <button
                 className="btn btn-outline-warning mr-lg-2 mr-0 mt-2 mt-lg-0"
                 type="button"
@@ -147,7 +152,7 @@ class MovieDBHeader extends Component {
                   aria-haspopup="true"
                   aria-expanded="false"
                 >Top Movies by Year</button>
-                <div className="dropdown-menu mt-2" aria-labelledby="gd-mdb-year-menu">
+                <div className="dropdown-menu gd-mnu-scrollable mt-2" aria-labelledby="gd-mdb-year-menu">
                   {yearList.map((year, index) => {
                     return (
                       <button

@@ -16,7 +16,14 @@
 /**
  * Custom CSS
  */
- .gd-mdb-card-header {
+
+.gd-mnu-scrollable {
+  height: auto;
+  max-height: 200px;
+  overflow-x: hidden;
+}
+
+.gd-mdb-card-header {
   font-size: 1.2em;
 }
 
