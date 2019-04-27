@@ -2,7 +2,7 @@
  * Use your own key here
  */
 const myKey = () => {
-    return 'XXXXXXXX';
+    return 'x';
 }
 
 module.exports.myKey = myKey;

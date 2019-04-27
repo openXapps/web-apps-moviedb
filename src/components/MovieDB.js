@@ -35,6 +35,7 @@ class MovieDB extends Component {
     this.getMovies = this.getMovies.bind(this);
     this.getFavorites = this.getFavorites.bind(this);
     this.getNextPage = this.getNextPage.bind(this);
+    this.getPreviousPage = this.getPreviousPage.bind(this);
     this.getByCast = this.getByCast.bind(this);
     this.toggleFavorite = this.toggleFavorite.bind(this);
   }
@@ -186,6 +187,24 @@ class MovieDB extends Component {
     // console.log(`new url: ${newURL}`);
   }
 
+  // Fetch next page of movies
+  getPreviousPage() {
+    let pages = { ...this.state.pages };
+    let newURL = this.state.currentURL;
+    // console.log(`old url: ${newURL}`);
+    if (newURL.indexOf('page=') > -1 && pages.page > 1) {
+      newURL = newURL.slice(0, newURL.indexOf('page='));
+      newURL += `page=${pages.page - 1}`;
+      this.setState({
+        isMovieListLoading: true,
+        currentURL: newURL
+      });
+      scrollTop();
+      this.getData(encodeURI(newURL), true, null);
+    }
+    // console.log(`new url: ${newURL}`);
+  }
+
   // Fetch movies by cast memeber (actor)
   getByCast(cast) {
     // console.log('Calling getByCast');
@@ -296,6 +315,8 @@ class MovieDB extends Component {
 
         <MovieDBFooter
           filter={this.state.currentFilter}
+          pages={{ ...this.state.pages }}
+          handlePreviousPage={this.getPreviousPage}
         />
 
         <MovieDBDisclaimer />
