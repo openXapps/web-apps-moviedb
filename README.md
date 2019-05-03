@@ -75,7 +75,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   * Ability to export local storage data. Allows to backup your favorites and ratings.
   * Ability to select country (locale) so movie filtering works better.
 * Add movie director and filter by director.
-* Change rating to a more granular scale. Perhaps x6 stars (1.7, 3.3, 5.0, 6.7, 8.3, 10.0).
+* Change rating to a more granular scale. Perhaps x9 stars (1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5).
 
 
 

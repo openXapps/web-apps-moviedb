@@ -5,14 +5,15 @@ import moment from 'moment';
 import { getLocalStorage, saveLocalStorage, addLocalStorage } from '../utilities/localstorage';
 
 const MovieDBModalRate = (props) => {
-  const scale = [1.5, 3.5, 5.5, 7.5, 9.5];
+  // const scale = [1.5, 3.5, 5.5, 7.5, 9.5];
+  const scale = [1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5];
   const [rating, setRating] = useState(0.1);
   const [guestSession, setGuestSession] = useState({ guestSessionId: '', expiresAt: '' });
   const [allowSubmit, setAllowSubmit] = useState(true);
 
   const toggleRateIcon = (scaleValue) => {
     return (
-      scaleValue <= rating ? 'fa fa-star gd-mdb-ico-lg text-warning' : 'fa fa-star gd-mdb-ico-lg text-muted'
+      scaleValue <= rating ? 'fa fa-star gd-mdb-ico-md text-warning' : 'fa fa-star gd-mdb-ico-md text-muted'
     );
   };
 
@@ -36,6 +37,7 @@ const MovieDBModalRate = (props) => {
       })
         .then((response) => {
           if (response.ok) return response.json();
+          // console.log(response);
           throw new Error(`Rating response: ${response.statusText}`);
         })
         .then((data) => {

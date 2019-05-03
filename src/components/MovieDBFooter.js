@@ -4,7 +4,7 @@ import React from 'react';
 import { scrollTop, scrollBottom } from '../utilities/swissknife';
 
 const MovieDBFooter = (props) => {
-  console.log(props);
+  // console.log(props);
   return (
     <div className="fixed-bottom bg-secondary gd-mdb-footer">
       <div className="d-flex">
