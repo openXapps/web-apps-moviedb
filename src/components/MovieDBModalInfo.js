@@ -15,8 +15,16 @@ const MovieDBModalInfo = (props) => {
   const fileName = buildFileName(movie.title, movie.release_date);
 
   const getTor = () => {
-    const url = `https://yts.am/api/v2/list_movies.json?&query_term=${movie.imdb_id}`;
-    fetch(url)
+    // https://yts.lt/api
+    const url = `https://yts.lt/api/v2/list_movies.json?&query_term=${movie.imdb_id}`;
+    fetch(url, {
+      // mode: 'cors',
+      // credentials: 'include',
+      // headers: {
+      //   "Content-Type": "application/json",
+      //   "Accept": "application/json"
+      // }
+    })
       .then((response) => {
         if (response.ok) return response.json();
         throw new Error('Problem fetching movie list.');
@@ -31,9 +39,10 @@ const MovieDBModalInfo = (props) => {
         // console.log(`torrents: ${tor}`);
         setHideOther(false);
       }).catch((error) => {
-        console.log(error.message);
+        console.log('YTS error: ', error.message);
         // console.log(`URL: ${url}`);
         setTor([]);
+        setHideOther(false);
       });
   };
 
