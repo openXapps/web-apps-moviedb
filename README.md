@@ -59,7 +59,7 @@ I use [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
-* **Gavin Dalton** - *Initial work* - [GitHub](https://github.com/gavin-dalton/)
+* **OpenApps Founder** - *Initial work* - [GitHub](https://github.com/openXapps/)
 
 ## License
 
@@ -75,7 +75,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   * Ability to export local storage data. Allows to backup your favorites and ratings.
   * Ability to select country (locale) so movie filtering works better.
 * Add movie director and filter by director.
-* Change rating to a more granular scale. Perhaps x9 stars (1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5).
+* Change rating to a more granular scale. Perhaps x9 stars (1.5, 2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 8.5, 9.5) - done
 
 
 
