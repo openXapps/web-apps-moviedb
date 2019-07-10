@@ -9,7 +9,7 @@ import { isLocalStorage } from '../utilities/localstorage';
 // Top Movies by Year menu
 const genYears = () => {
   const today = new Date();
-  const year = today.getFullYear() - 1;
+  const year = today.getFullYear();
   const yearList = [];
   for (let n = 0; n < 110; n++) {
     yearList.push(year - n);

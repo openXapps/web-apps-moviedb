@@ -17,7 +17,7 @@ const Disclaimer = (props) => {
           <div className="modal-body">
             <p>This product uses the The Movie Database API, but is not endorsed or certified by The Movie Database (TMDb) organization. My gratitude goes out to TMDb team for providing this API ... you have my respect and support!</p>
             <p>Source code for this web app can be found at <a
-              href="https://github.com/gavin-dalton/web-apps-moviedb/"
+              href="https://github.com/openXapps/web-apps-moviedb/"
               target="_blank"
               rel="noopener noreferrer"
               >GitHub</a></p>
