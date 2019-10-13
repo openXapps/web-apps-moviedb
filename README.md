@@ -36,10 +36,11 @@ If you'd like to rate a movie, all you have to do is click on a movie, which wil
 
 ## Cloning this project
 
-You are welcome to clone this project and play with the code. Please note that you'll have to supply your own TMDb API key in file:
+You are welcome to clone this project and play with the code. Please note that you'll have to supply your own TMDb API key in environment file:
 
 ```
-<project>/src/assets/TMDbKey.js
+<project>/.env.local
+REACT_APP_API_KEY=<key>
 ```
 
 ## Built With
