@@ -47,7 +47,7 @@ const MovieDBModalInfo = (props) => {
   };
 
   return (
-    <React.Fragment>
+    <>
       <div className="row">
         <div className={colLeft}><p>Genre:</p></div>
         <div className={colRight}>
@@ -97,18 +97,21 @@ const MovieDBModalInfo = (props) => {
         </div>
       </div>
       <div className="row mt-2">
-        <div className={colLeft}><p>Story:</p></div>
+        <div className={colLeft}>
+          <p>Story:</p>
+          <div
+            className="gd-mdb-hidden"
+            onClick={getTor}
+          >OOOOOOOOOO</div>
+        </div>
         <div className={colRight}><p className="text-primary">{movie.overview}</p></div>
       </div>
-      <div className="row">
+      {/* <div className="row">
         <div className={colLeft}><p>File Name:</p></div>
         <div className={colRight}><p className="text-primary">{fileName}</p></div>
-      </div>
+      </div> */}
       {hideOther ? (
-        <div
-          className="gd-mdb-hidden"
-          onClick={getTor}
-        >OOOOOOOOOOOO</div>
+        null
       )
         : (tor.length > 0 ? (
           <ul className="list-group text-center">
@@ -126,7 +129,7 @@ const MovieDBModalInfo = (props) => {
             <p className="text-muted">No results found</p>
           )
         )}
-    </React.Fragment>
+    </>
   )
 }
 

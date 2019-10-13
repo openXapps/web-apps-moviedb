@@ -80,7 +80,7 @@ class MovieDBDetails extends Component {
   render() {
     const modalStyle = { display: 'block' };
     return (
-      <React.Fragment>
+      <>
         {this.props.movieId > 0 ? (
           <div
             className="modal show gd-mdb-modal-animated gd-mdb-modal-fadeIn"
@@ -118,7 +118,7 @@ class MovieDBDetails extends Component {
                         ? (
                           <MovieDBDataErr />
                         ) : (
-                          <React.Fragment>
+                          <>
                             {this.state.isMovieLoading ? (
                               <MovieDBLoader />
                             ) : (
@@ -126,7 +126,7 @@ class MovieDBDetails extends Component {
                                   movie={this.state.movie}
                                 />
                               )}
-                          </React.Fragment>
+                          </>
                         )}
                     </div>
                     <div className="tab-pane container fade" id="gd-mdb-tab-cast">
@@ -162,7 +162,7 @@ class MovieDBDetails extends Component {
             </div>
           </div>
         ) : (null)}
-      </React.Fragment>
+      </>
     );
   }
 }

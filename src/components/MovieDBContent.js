@@ -94,7 +94,7 @@ class MovieDBContent extends Component {
   render() {
     // console.log(this.state.favorites);
     return (
-      <React.Fragment>
+      <>
         {this.state.movieId > 0 ? (
           <MovieDBModal
             apiKey={this.props.apiKey}
@@ -138,7 +138,7 @@ class MovieDBContent extends Component {
             })}
           </div>
         </div>
-      </React.Fragment >
+      </>
     );
   }
 }

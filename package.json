@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://www.openapps.co.za/apps/web-apps-moviedb",
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "moment": "^2.24.0",
     "node-sass": "^4.11.0",
     "react": "^16.8.3",

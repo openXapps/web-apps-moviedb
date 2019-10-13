@@ -1,8 +1,8 @@
 /**
- * Use your own key here
+ * Use your own key in .env.local
  */
 const myKey = () => {
-    return 'x';
+    return process.env.REACT_APP_API_KEY;
 }
 
 module.exports.myKey = myKey;

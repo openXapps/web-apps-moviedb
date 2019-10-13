@@ -276,8 +276,7 @@ class MovieDB extends Component {
     const numOfMovies = movies.length;
     const apiKey = myKey();
     return (
-      <React.Fragment>
-
+      <>
         <MovieDBHeader
           getMovies={this.getMovies}
           getFavorites={this.getFavorites}
@@ -320,7 +319,7 @@ class MovieDB extends Component {
         />
 
         <MovieDBDisclaimer />
-      </React.Fragment>
+      </>
     );
   }
 }

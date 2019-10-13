@@ -83,8 +83,8 @@ class MovieDBHeader extends Component {
   render() {
     const yearList = genYears();
     return (
-      <React.Fragment>
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-2 py-2">
+      <div className="container">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-0 py-2 border-0">
           <a
             className="btn btn-outline-warning mr-md-2"
             href="/"
@@ -188,7 +188,7 @@ class MovieDBHeader extends Component {
             </div>
           </div>
         </nav>
-      </React.Fragment>
+      </div>
     )
   }
 }
