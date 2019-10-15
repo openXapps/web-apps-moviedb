@@ -8,7 +8,8 @@ import { buildFileName } from '../utilities/swissknife';
 
 const MovieDBModalInfo = (props) => {
   const [hideOther, setHideOther] = useState(true);
-  const [tor, setTor] = useState([])
+  const [tor, setTor] = useState([]);
+  const [torLoading, setTorLoading] = useState(false);
   const colLeft = 'col-3 col-sm-3 col-md-3';
   const colRight = 'col-9 col-sm-9 col-md-9';
   const movie = props.movie;
@@ -17,6 +18,7 @@ const MovieDBModalInfo = (props) => {
   const getTor = () => {
     // https://yts.lt/api
     const url = `https://yts.lt/api/v2/list_movies.json?&query_term=${movie.imdb_id}`;
+    setTorLoading(true);
     fetch(url, {
       // mode: 'cors',
       // credentials: 'include',
@@ -32,16 +34,20 @@ const MovieDBModalInfo = (props) => {
       .then((data) => {
         // console.dir(data);
         // console.log(data.data.movie_count);
-        if (data.data.movie_count > 0) {
-          // console.dir(data.data.movies[0]);
-          setTor(data.data.movies[0].torrents);
-        }
-        // console.log(`torrents: ${tor}`);
-        setHideOther(false);
+        setTimeout(() => {
+          if (data.data.movie_count > 0) {
+            // console.dir(data.data.movies[0]);
+            setTor(data.data.movies[0].torrents);
+          }
+          setTorLoading(false);
+          setHideOther(false);
+        }, 1000);
+        // console.log('MovieDBModalInfo: tors...', tor);
       }).catch((error) => {
         console.log('YTS error: ', error.message);
         // console.log(`URL: ${url}`);
         setTor([]);
+        setTorLoading(false);
         setHideOther(false);
       });
   };
@@ -99,10 +105,11 @@ const MovieDBModalInfo = (props) => {
       <div className="row mt-2">
         <div className={colLeft}>
           <p>Story:</p>
-          <div
-            className="gd-mdb-hidden"
-            onClick={getTor}
-          >OOOOOOOOOO</div>
+          {torLoading ? (
+            <div className="spinner-grow text-warning" role="status"></div>
+          ) : (
+              <div className="gd-mdb-hidden" onClick={getTor}>OOOOOO</div>
+            )}
         </div>
         <div className={colRight}><p className="text-primary">{movie.overview}</p></div>
       </div>
