@@ -17,10 +17,11 @@ const MovieDBModalInfo = (props) => {
 
   const getTor = () => {
     // https://yts.lt/api
-    const url = `https://yts.lt/api/v2/list_movies.json?&query_term=${movie.imdb_id}`;
+    // const url = `https://yts.lt/api/v2/list_movies.json?&query_term=${movie.imdb_id}`;
+    const url = `https://yts.mx/api/v2/list_movies.jsonp?&query_term=${movie.imdb_id}`;
     setTorLoading(true);
     fetch(url, {
-      // mode: 'cors',
+      // mode: 'cors'
       // credentials: 'include',
       // headers: {
       //   "Content-Type": "application/json",
