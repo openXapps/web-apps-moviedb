@@ -15,7 +15,7 @@ import MovieDBEmpty from './MovieDBEmpty';
 import '../assets/MovieDB.scss';
 import { getLocalStorage, addLocalStorage, removeLocalStorage } from '../utilities/localstorage';
 import { sortData, filterData, scrollTop } from '../utilities/swissknife';
-import { myKey } from '../assets/TMDbKey';
+import { meta } from '../assets/meta';
 import MovieDBSearchIDs from '../assets/MovieDBSearchIDs';
 
 class MovieDB extends Component {
@@ -151,7 +151,7 @@ class MovieDB extends Component {
       default:
         break;
     };
-    url += `&api_key=${myKey()}`;
+    url += `&api_key=${meta().tmdb}`;
     url += `&page=${
       currentFilter.indexOf(this.state.currentFilter) > -1
         ? this.state.pages.page : 1
@@ -274,7 +274,7 @@ class MovieDB extends Component {
   render() {
     const movies = this.state.movies;
     const numOfMovies = movies.length;
-    const apiKey = myKey();
+    const apiKey = meta().tmdb;
     return (
       <>
         <MovieDBHeader
