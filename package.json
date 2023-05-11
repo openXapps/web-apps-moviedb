@@ -2,7 +2,7 @@
   "name": "web-apps-moviedb",
   "version": "2.0.1",
   "private": true,
-  "homepage": "https://www.openapps.co.za/apps/web-apps-moviedb",
+  "homepage": "/apps/web-apps-moviedb/",
   "dependencies": {
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
