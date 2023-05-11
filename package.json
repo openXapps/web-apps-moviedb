@@ -4,13 +4,13 @@
   "private": true,
   "homepage": "https://www.openapps.co.za/apps/web-apps-moviedb",
   "dependencies": {
-    "lodash": "^4.17.15",
-    "moment": "^2.24.0",
-    "node-sass": "^4.11.0",
-    "react": "^16.8.3",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "node-sass": "^8.0.0",
+    "react": "^18.2.0",
     "react-app-polyfill": "^0.2.2",
-    "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,6 +26,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {}
+  ]
 }

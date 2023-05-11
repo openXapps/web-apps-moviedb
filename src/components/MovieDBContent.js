@@ -38,6 +38,7 @@ class MovieDBContent extends Component {
     document.body.classList.remove('modal-open');
     document.body.style.paddingRight = '';
     document.body.removeChild(backdrop[0]);
+    document.body.removeChild(backdrop[0]); // for some reason there are 2 backdrops
     if (cast.id) this.props.handleCast(cast);
   }
 
